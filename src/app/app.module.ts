@@ -33,8 +33,7 @@ import { RegisterComponent } from './register/register.component'
         },
         {
           path:'logout',
-          component: LogoutComponent,
-          
+          component: LogoutComponent          
         },
         {
           path:'dashboard',

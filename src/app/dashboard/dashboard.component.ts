@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
   constructor(private user: UserService, private router:Router) { }
   
   ngOnInit() {
+
        this.user.getData().subscribe(data => {
          if(data.status){
           this.quote = data.quote
@@ -23,6 +24,18 @@ export class DashboardComponent implements OnInit {
           this.router.navigate(['logout'])
         }
        })
-  }
+    }
 
+    updatequote(event){
+      const value = event.target.parentNode.querySelector('#myQuote').value
+      this.user.updateQuote(value).subscribe( data => {
+        if(data.success){
+          alert("Your quote was updated")
+        }
+        else{
+          alert("Some Problem")
+        }
+      })
+    
+    }
 }

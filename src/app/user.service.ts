@@ -11,6 +11,10 @@ interface isLoggedIn {
   status: boolean
 }
 
+interface update {
+  success: boolean
+}
+
 interface logoutStatus{
   success: boolean
 }
@@ -24,6 +28,12 @@ export class UserService {
 
   getData(){
     return this.http.get<myData>('/api/data')
+  }
+
+  updateQuote(value){
+    return this.http.post<update>('/api/quote' , {
+      value
+    })
   }
 
   isLoggedIn(): Observable<isLoggedIn> {

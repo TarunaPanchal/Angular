@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
         {
           console.log(data)
           if(data.success){
-            this.router.navigate(['darshboard'])
+            this.router.navigate(['dashboard'])
           }
         })
     }
