@@ -30,3 +30,8 @@ a{
     bottom: 70%;   
     font-size:30px;
  }
+
+ a:hover {
+    background: rgb(250, 242, 242);
+    color: rgba(73, 72, 72, 0.568);
+}
