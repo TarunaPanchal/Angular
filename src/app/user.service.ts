@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
 
 interface myData{
   email: string,
@@ -24,7 +25,8 @@ interface logoutStatus{
 })
 export class UserService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private store: Store<any>) { }
 
   getData(){
     return this.http.get<myData>('/api/data')
@@ -42,5 +44,9 @@ export class UserService {
 
   logout(){
     return this.http.get<logoutStatus>('/api/logout')
+  }
+
+  getAllState(){
+    return this.store.select('appReducer')
   }
 }

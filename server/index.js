@@ -115,7 +115,7 @@ app.get('/api/data',async (req, res) => {
     
 })
 
-app.get('/api/logout',( req, res) => {
+app.get('/api/logout',(req, res) => {
     
     req.session.destroy()
     res.session.json({

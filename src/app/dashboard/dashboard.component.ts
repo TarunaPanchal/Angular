@@ -21,7 +21,8 @@ export class DashboardComponent implements OnInit {
           this.quote = data.quote
           this.email = data.email
         }else{
-          this.router.navigate(['logout'])
+          // this.router.navigate(['logout'])
+          this.router.navigate([''])
         }
        })
     }

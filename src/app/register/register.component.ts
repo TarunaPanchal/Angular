@@ -23,8 +23,8 @@ export class RegisterComponent implements OnInit {
 
     if(password != cpassword){
       error.push("Password Do not match")
-    }
-
+      alert("Password Do not match")
+    } 
     if(error.length === 0){
       this.auth.registerUser(username,password).subscribe(data =>
         {
